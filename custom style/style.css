@@ -1,0 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.custom-container{
+    padding: 0 4%;  /* tailwind container not working fine */
+}
