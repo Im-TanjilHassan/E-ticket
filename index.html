@@ -127,8 +127,8 @@
                 </div>
             </div>
             <!--ticket buying steps -->
-            <div class="grid grid-cols-3">
-                <div class="border border-red-800 col-span-2 p-5 space-y-10">
+            <div class="lg:grid lg:grid-cols-3">
+                <div class="col-span-2 space-y-10 lg:p-10">
                     <h2 class="text-3xl font-bold">Select Your Seat</h2>
                     <div class="flex justify-between">
                         <div class="flex items-center space-x-2">
@@ -142,7 +142,7 @@
                     </div>
                     <button class="bg-slate-300 py-2 rounded-lg w-28 float-end"><img class="mx-auto" src="images/steering-wheel.svg" alt=""></button>
                     <!--seat number-->
-                    <div class="w-full grid grid-row-10 gap-y-10 pt-10">
+                    <div class="w-full grid grid-row-10 gap-y-10 py-16">
                         <!--A serial seat-->
                         <div class="flex justify-between">
                             <p class="py-1 px-5 rounded-lg font-semibold cursor-pointer bg-white">A</p>
@@ -225,8 +225,59 @@
                         </div>
                     </div>
                 </div>
-                <div class="border-l border-l-black border-dashed p-5">
-                    <h2 class="text-3xl font-bold">Total Price </h2>
+                <div class="lg:border-l lg:border-l-black lg:border-dashed lg:p-10">
+                    <h2 class="text-3xl font-bold mb-10">Total Price </h2>
+                    <div class="space-y-5 mb-16">
+                        <!---seat booked price calculation-->
+                        <div class="flex justify-between">
+                            <p class="font-bold">Seat <span>0</span></p>
+                            <p class="font-bold">Class</p>
+                            <p class="font-bold">Price</p>
+                        </div>
+                        <div class="flex justify-between">
+                            <p >C2</p>
+                            <p>Economoy</p>
+                            <p>$50</p>
+                        </div>
+                        <div class="flex justify-between">
+                            <p >C2</p>
+                            <p>Economoy</p>
+                            <p>$50</p>
+                        </div>
+                        <hr class="bg-slate-300 h-1">
+                        <div class="flex justify-between">
+                            <p class="font-bold">Total</p>
+                            <p class="font-bold">BDT 1100</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-blue-300">Have any copupon?</p>
+                            <button class="btn w-32 bg-[#1DD100] hover:border hover:border-[#1DD100]">Apply</button>
+                        </div>
+                        <div class="flex justify-between">
+                            <p class="font-bold">Grand Total</p>
+                            <p class="font-bold">BDT 1100</p>
+                        </div>
+                    </div>
+                    <!--seat book confirmation-->
+                    <div class="space-y-5">
+                        <label class="flex flex-col space-y-3">
+                            <p class="font-bold">Passenger Name*</p>
+                            <input type="text" class="p-3 border border-gray-300 rounded-lg" placeholder="Enter your Name" />
+                        </label>
+                        <label class="flex flex-col space-y-3">
+                            <p class="font-bold">Phone Number*</p>
+                            <input type="text" class="p-3 border border-gray-300 rounded-lg" placeholder="Enter your Phone Number" />
+                        </label>
+                        <label class="flex flex-col space-y-3">
+                            <p class="font-bold">Email ID</p>
+                            <input type="text" class="p-3 border border-gray-300 rounded-lg" placeholder="Enter Your Email ID" />
+                        </label>
+                        <button class="btn bg-[#1DD100] text-white w-full hover:text-black hover:border hover:border-[#1DD100]">Next</button>
+                    </div>
+                    <div class="flex justify-between mt-10">
+                        <a class="border-b border-black" href="">Terms and Conditions</a>
+                        <a class="border-b border-black" href="">Cancellation Policy</a>
+                    </div>
                 </div> 
             </div>
         </section>
