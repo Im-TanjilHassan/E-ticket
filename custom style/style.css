@@ -6,3 +6,7 @@
 .custom-container{
     padding: 0 4%;  /* tailwind container not working fine */
 }
+
+.select-seat{
+    display: inline-block;
+}
