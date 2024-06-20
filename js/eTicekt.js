@@ -5,13 +5,9 @@ function seatSelected(seatId) {
 
     // calling seatPriceCalculate function
     seatPriceCalculate();
-
-    //calling make next btn enable function
-    //makeNextBtnEnable();
 }
 
 // showing seat detail and price
-
 function seatDetails(seatId) {
     //set bg color after selecting a seat
     const seatIdentify = document.getElementById(seatId);
@@ -39,29 +35,38 @@ function seatDetails(seatId) {
 };
 
 //calculating seat price
-
 function seatPriceCalculate() {
     
-    let getDefaultPrice = document.getElementById("seat-total-price");
-    let defaultPrice = parseInt(getDefaultPrice.innerText);
+    let getDefaultTotalPrice = document.getElementById("seat-total-price");
+    let totalPrice = parseInt(getDefaultTotalPrice.innerText);
 
     //get seat perches price and addition to total price
-    const seatPerchesPrice = document.getElementById('seat-price');
-    const makePriceInt = parseInt(seatPerchesPrice.innerText)
-    defaultPrice = defaultPrice + makePriceInt;
+    const perSeatPrice = document.getElementById('seat-price');
+    const perSeatPriceInt = parseInt(perSeatPrice.innerText);
+    totalPrice = totalPrice + perSeatPriceInt;
     
-    getDefaultPrice.innerText = defaultPrice;
-    
+    getDefaultTotalPrice.innerText = totalPrice;
+
+    //grand total price calculation
+    const getDefaultGrandTotalPrice = document.getElementById('grand-total')
+    getDefaultGrandTotalPrice.innerText = totalPrice;
+    //const grandTotal = parseInt(getDefaultGrandTotalPrice.innerText)
+       
 }
 
 // make next btn enable
 document.getElementById("phone-number").addEventListener("change", function (event) {
     const seatCount = document.getElementById("seat-perches-count").innerText;
 
+    console.log(event.target.value);
     if (seatCount >= 1 && typeof parseInt(event.target.value) === "number") {
-      console.log("condition is true");
-      document.getElementById("next-btn").removeAttribute("disabled");
-      }
+        document.getElementById("next-btn").removeAttribute("disabled");
+
+        // if input field value become empty again button will be disabled again
+        if (!event.target.value) {
+            document.getElementById("next-btn").setAttribute("disabled", "")
+        }
+    }
   });
 
  
