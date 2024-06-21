@@ -55,7 +55,6 @@ function seatPriceCalculate(seatId) {
     //get seat perches price and addition to total price
     const perSeatPrice = document.getElementById("seat-price");
     const perSeatPriceInt = parseInt(perSeatPrice.innerText);
-    console.log(perSeatPrice);
     totalPrice = totalPrice + perSeatPriceInt;
 
     getDefaultTotalPrice.innerText = totalPrice;
@@ -103,13 +102,11 @@ function usingCouponCode() {
 
     // show discounted price
     const discountWrapper = document.getElementById("discount-wraper");
-    const showDiscountedPrice = document.getElementById("discount-price").innerText;
-    console.log(showDiscountedPrice);
+    const showDiscountedPrice = document.getElementById("discount-price");
 
     // get grand total price and calculate
     const grandTotalPrice = document.getElementById("grand-total");
     const grandTotalPriceInt = parseInt(grandTotalPrice.innerText);
-    console.log(grandTotalPriceInt);
 
     // input value
     const couponInputValue = document.getElementById('coupon-input').value
@@ -127,7 +124,7 @@ function usingCouponCode() {
         discountWrapper.classList.remove("hidden");
 
         //show discount price
-        showDiscountedPrice.innerText(getDiscount);
+        showDiscountedPrice.innerText = getDiscount;
         
     }
     else if (couponInputValue == "Couple 20") {
@@ -143,6 +140,7 @@ function usingCouponCode() {
       discountWrapper.classList.remove("hidden");
 
       //show discount price
+      showDiscountedPrice.innerText = getDiscount;
     }
     else {
         alert('Invalid coupon code')
@@ -150,4 +148,8 @@ function usingCouponCode() {
 
 }
 
+// refresh page
 
+function reload() {
+  location.replace(location.href);
+}
