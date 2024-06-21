@@ -51,7 +51,7 @@
                     <div class="lg:col-span-2 flex">
                         <img  src="images/cupon-devider.png" alt="">
                         <div class="w-full text-center pt-16">
-                            <h2 class="text-3xl font-bold">NEW<sub>15</sub></h2>
+                            <h2 class="text-3xl font-bold">NEW15</h2>
                             <p>Coupon Code</p>
                         </div>
                     </div>
@@ -244,9 +244,13 @@
                             <p class="font-bold">Total</p>
                             <p class="font-bold">BDT <span id="seat-total-price">0</span></p>
                         </div>
-                        <div class="flex justify-between items-center">
-                            <p class="text-blue-300">Have any copupon?</p>
-                            <button disabled="disabled" class="btn w-32 bg-[#1DD100] hover:border hover:border-[#1DD100]">Apply</button>
+                        <div id="coupon-wrapper" class="flex justify-between items-center">
+                            <input id="coupon-input" disabled type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Have any copupon?" />
+                            <button onclick="usingCouponCode()" id="coupon-btn" disabled class="btn w-32 bg-[#1DD100] hover:border hover:border-[#1DD100]">Apply</button>
+                        </div>
+                        <div id="discount-wraper" class="flex justify-between hidden">
+                            <p class="font-bold">Discounted Price -</p>
+                            <p class="font-bold">BDT <span id="discount-price">0</span> Taka</p>
                         </div>
                         <div class="flex justify-between">
                             <p class="font-bold">Grand Total</p>
@@ -267,7 +271,7 @@
                             <p class="font-bold">Email ID</p>
                             <input type="text" class="p-3 border border-gray-300 rounded-lg" placeholder="Enter Your Email ID" />
                         </label>
-                        <button id="next-btn" onclick="my_modal_1.showModal()" class="btn bg-[#1DD100] text-white w-full hover:text-black hover:border hover:border-[#1DD100]" disabled="'disabled">Next</button>
+                        <button id="next-btn" onclick="my_modal_1.showModal()" class="btn bg-[#1DD100] text-white w-full hover:text-black hover:border hover:border-[#1DD100]" disabled>Next</button>
                     </div>
                     <div class="flex justify-between mt-10">
                         <a class="border-b border-black" href="">Terms and Conditions</a>

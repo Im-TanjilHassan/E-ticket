@@ -7,7 +7,15 @@ function seatSelected(seatId) {
       // calling seatDetails Function
       seatDetails(seatId);
       // calling seatPriceCalculate function
-      seatPriceCalculate(seatId);
+        seatPriceCalculate(seatId);
+        
+        if (seatBooked.length == 4) {
+            const applyCouponBtn = document.getElementById("coupon-btn");
+            applyCouponBtn.removeAttribute('disabled')
+
+            const couponInput = document.getElementById("coupon-input");
+            couponInput.removeAttribute("disabled");
+        }
     }
     else {
         alert("You only can booked 4 seat at a time")
@@ -75,9 +83,8 @@ function seatCalculation() {
 document
   .getElementById("phone-number")
   .addEventListener("change", function (event) {
-    const seatCount = document.getElementById("seat-perches-count").innerText;
-
-    console.log(event.target.value);
+      const seatCount = document.getElementById("seat-perches-count").innerText;
+      
     if (seatCount >= 1 && typeof parseInt(event.target.value) === "number") {
       document.getElementById("next-btn").removeAttribute("disabled");
 
@@ -87,3 +94,60 @@ document
       }
     }
   });
+
+
+//------------ coupon code ---------------
+function usingCouponCode() {
+    //get coupon wrapper div box
+    const couponWrapper = document.getElementById("coupon-wrapper")
+
+    // show discounted price
+    const discountWrapper = document.getElementById("discount-wraper");
+    const showDiscountedPrice = document.getElementById("discount-price").innerText;
+    console.log(showDiscountedPrice);
+
+    // get grand total price and calculate
+    const grandTotalPrice = document.getElementById("grand-total");
+    const grandTotalPriceInt = parseInt(grandTotalPrice.innerText);
+    console.log(grandTotalPriceInt);
+
+    // input value
+    const couponInputValue = document.getElementById('coupon-input').value
+   
+    if (couponInputValue === "NEW15") {
+      //15% discount
+      const getDiscount = grandTotalPriceInt * (15 / 100);
+      const discountedPrice = grandTotalPriceInt - getDiscount;
+      grandTotalPrice.innerText = discountedPrice;
+
+      // hide coupon wrapper
+        couponWrapper.classList.add("hidden");
+        
+        // show discounted price
+        discountWrapper.classList.remove("hidden");
+
+        //show discount price
+        showDiscountedPrice.innerText(getDiscount);
+        
+    }
+    else if (couponInputValue == "Couple 20") {
+      //20% discount
+      const getDiscount = grandTotalPriceInt * (20 / 100);
+      const discountedPrice = grandTotalPriceInt - getDiscount;
+      grandTotalPrice.innerText = discountedPrice;
+
+      // hide coupon wrapper
+      couponWrapper.classList.add("hidden");
+
+      // show discounted price
+      discountWrapper.classList.remove("hidden");
+
+      //show discount price
+    }
+    else {
+        alert('Invalid coupon code')
+    }
+
+}
+
+
